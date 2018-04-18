@@ -9,7 +9,8 @@ TCP抓包
 
 双击, 打开出现的第一个界面如下:
 
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/Screen Shot 2018-04-15 at 5.23.46 PM.png)
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+Screen Shot 2018-04-15 at 5.23.46 PM.png)
 
 ## 选择网卡
 
@@ -41,7 +42,8 @@ host 223.112.8.230
 		
 如果出现错误弹框如下:
 	
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/Screen Shot 2018-04-15 at 6.01.59 PM.png)
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+Screen Shot 2018-04-15 at 6.01.59 PM.png)
 	
 如果没有, 请忽略本条, 继续下一个步骤,如果有,执行以下命令
 	
@@ -54,7 +56,8 @@ sudo chown [用户名]:admin bp* ##用户名可通过 whoami 命令获取到
 	
 ## 流量监听
 
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/Screen Shot 2018-04-16 at 8.56.01 AM.png)
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+Screen Shot 2018-04-16 at 8.56.01 AM.png)
 	
 界面主要分为四块
 	
@@ -74,12 +77,15 @@ display filter只是从界面上过滤掉不符合规则的包，Wireshark实际
 ```
 ### 第二部分:
 `历史流量展示界面`, 这里展示的是从抓包开始,按照过滤规则,所有通过iPhone设备的流量. 列表界面不同的包有不同的颜色,可在菜单`View-Coloring rules`查看着色规则
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/Screen Shot 2018-04-16 at 10.02.46 AM.png)
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+Screen Shot 2018-04-16 at 10.02.46 AM.png)
 	
 * 这里有个小技巧，如上图所示，我只将我感兴趣的协议包上了色，集中在http，tcp，udp包，这样分析起来更加直观。
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/1534161-f990e7b97d9b0aea.png)
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+1534161-f990e7b97d9b0aea.png)
 * 比如根据上图的规则，tcp三次握手中的Sync包是使用灰色标记的，这样我就可以在下图的包中迅速定位一次tcp连接的开始包位置：
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/1534161-f1250d830f90281c.png)
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+1534161-f1250d830f90281c.png)
 	
 ### 第三部分:
 `单个包的详细信息展示板`,我们在第二部分选中的包在这一部分会将其结构以可读的文本形式展示出来, 正确阅读这一部分信息需要对 [TCP/IP协议](https://www.cnblogs.com/onepixel/p/7092302.html) 有一定的掌握.
@@ -90,8 +96,8 @@ display filter只是从界面上过滤掉不符合规则的包，Wireshark实际
 Wireshark默认情况下将不同网络连接的流量都混在一起展示, 即使给不同协议的包着色之后, 要单独查看某个特定连接的流量依然不怎么方便, 我们可以通过Wireshark提供的两种方式实现这个目标
 ### 方式一: Follow Stream
 当我们选中某个包之后, 右键 `Follow - TCP Stream`, Wireshark 支持常见的四种Stream, `TCP UDP HTTP SSL`, 比如我们选中Follow TCP Stream 之后可以得到如下的详细分析输出
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/Screen Shot 2018-04-16 at 10.49.14 AM.png)
-	
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+Screen Shot 2018-04-16 at 10.49.14 AM.png)
 ```
 上图将iPhone和server之间某次的连接流量完整的呈现出来.
 还提供了流量编码选择,文本搜索功能等, 如果需要支持中文, 可在上图中选择UTF-8编码方式
@@ -99,7 +105,8 @@ Wireshark默认情况下将不同网络连接的流量都混在一起展示, 即
 ```
 ### 方式二: Flow Graph
 Flow Graph 可以通过菜单 `Statistics - Flow Graph`来生成, 这样我们可以得到另一种形式的流量呈现
-![](/Users/wolfer/Documents/SN Mark/Wireshark抓包/capture/1534161-f7fe8067a08fa739.png)
+![](https://github.com/hoyawolfer/learning-articles/blob/master/screenshots/
+1534161-f7fe8067a08fa739.png)
 和Follow Stream不同的是我们获取到的是完整的流量
 	
 ```
